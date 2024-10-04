@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: my-node-app  # Puoi personalizzare il nome
+    env: node
+    buildCommand: 'storia&letteratura'
+    startCommand: 'npm start'  # Usa il comando che esegue la tua app
+    plan: free
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production

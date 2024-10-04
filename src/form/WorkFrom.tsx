@@ -13,6 +13,7 @@ const WorkForm: React.FC = () => {
     const [title, setTitle] = useState('');
     const [genre, setGenre] = useState('');
     const [authorId, setAuthorId] = useState('');
+    const [links, setLinks] = useState<string[]>([]); // Aggiungi lo stato per i link come array di stringhe
     const [authors, setAuthors] = useState<Author[]>([]); // Usa il tipo Author[]
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
@@ -40,6 +41,7 @@ const WorkForm: React.FC = () => {
                     setTitle(work.title);
                     setGenre(work.genre);
                     setAuthorId(work.authorId);
+                    setLinks(work.links || []); // Assicurati che i link siano un array, anche se vuoto
                 } catch (err) {
                     setError('Error fetching work data');
                 }
@@ -52,7 +54,7 @@ const WorkForm: React.FC = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        const workData = { title, genre, authorId };
+        const workData = { title, genre, authorId, links }; // Includi i link nel payload
 
         try {
             if (id) {
@@ -64,6 +66,10 @@ const WorkForm: React.FC = () => {
         } catch (err) {
             setError('Failed to submit the work. Please try again later.');
         }
+    };
+
+    const handleLinksChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+        setLinks(e.target.value.split('\n').filter(link => link.trim() !== '')); // Assicurati di ottenere un array di stringhe non vuote
     };
 
     if (loading) {
@@ -108,6 +114,15 @@ const WorkForm: React.FC = () => {
                         </option>
                     ))}
                 </select>
+            </div>
+            <div>
+                <label className="block text-sm font-medium text-gray-700">Links (one per line):</label>
+                <textarea
+                    value={links.join('\n')}  // Converti l'array in una stringa separata da nuove righe
+                    onChange={handleLinksChange}  // Ogni nuova riga è un nuovo link
+                    className="mt-1 block w-full p-2 border border-gray-300"
+                    placeholder="Enter one link per line"
+                ></textarea>
             </div>
             <button
                 type="submit"

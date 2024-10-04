@@ -3,6 +3,7 @@ export interface Work {
     title: string;
     genre: string;
     authorId: string;
+    links: string[];
     author: {
         id: string;
         name: string;

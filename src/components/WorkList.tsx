@@ -94,6 +94,21 @@ const WorkList: React.FC = () => {
                             <h2 className="text-xl font-bold">{work.title}</h2>
                             <p>{work.genre}</p>
                             <p>{getAuthorName(work.authorId)}</p> {/* Mostra il nome dell'autore */}
+                            {/* Visualizza i link */}
+                            {work.links && work.links.length > 0 && (
+                                <div className="mt-4">
+                                    <h3 className="text-lg font-semibold">Links:</h3>
+                                    <ul className="list-disc list-inside">
+                                        {work.links.map((link, index) => (
+                                            <li key={index}>
+                                                <a href={link} className="text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer">
+                                                    {link}
+                                                </a>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
                             <button
                                 className="text-blue-500 hover:underline mr-4"
                                 onClick={() => navigate(`/works/${work.id}`)}

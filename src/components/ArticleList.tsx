@@ -66,7 +66,7 @@ const ArticleList: React.FC = () => {
     }
 
     return (
-        <div className="container mx-auto p-6">
+        <div className="container mx-auto p-4">
             {/* Barra di ricerca */}
             <div className="mb-6">
                 <input
@@ -74,22 +74,22 @@ const ArticleList: React.FC = () => {
                     value={searchQuery}
                     onChange={handleSearch}
                     placeholder="Search articles by title or content..."
-                    className="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
+                    className="w-full p-3 border text-black border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
                 />
             </div>
 
             {/* Lista degli articoli filtrati */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {filteredArticles.length === 0 ? (
                     <p>No articles found</p>
                 ) : (
                     filteredArticles.map((article) => (
                         <div
                             key={article.id}
-                            className="bg-white shadow-lg rounded-lg p-6 transform transition duration-300 hover:scale-105"
+                            className="bg-white shadow-lg rounded-lg p-4 text-blue-600 transform transition duration-300 hover:scale-105"
                         >
-                            <h2 className="text-2xl font-semibold mb-2">{article.title}</h2>
-                            <p className="text-gray-600 mb-4">
+                            <h2 className="text-xl font-semibold mb-2">{article.title}</h2>
+                            <p className="text-blue-600 mb-4">
                                 {expandedArticleId === article.id
                                     ? article.content // Mostra l'intero contenuto se espanso
                                     : article.content.slice(0, 100) + '...'} {/* Mostra una preview se non espanso */}
@@ -102,13 +102,13 @@ const ArticleList: React.FC = () => {
                             </button>
                             <div className="mt-4 flex justify-between">
                                 <button
-                                    className="bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 transition"
+                                    className="bg-green-500 text-white py-1 px-3 text-sm rounded-lg hover:bg-green-600 transition"
                                     onClick={() => navigate(`/edit-article/${article.id}`)}
                                 >
                                     Edit
                                 </button>
                                 <button
-                                    className="bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600 transition"
+                                    className="bg-red-500 text-white py-1 px-3 text-sm rounded-lg hover:bg-red-600 transition"
                                     onClick={() => handleDelete(article.id || '')}
                                 >
                                     Delete
