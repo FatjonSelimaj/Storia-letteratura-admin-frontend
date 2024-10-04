@@ -2,7 +2,7 @@ import axios from 'axios';
 import { HistorySection } from '../interfaces/historyInterface';
 
 export const API_URL = import.meta.env.VITE_API_URL;
-const ADMIN_SECRET = import.meta.env.VITE_ADMIN_SECRET;
+const ADMIN_SECRET = import.meta.env.ADMIN_SECRET;
 
 // services/historyService.ts
 
