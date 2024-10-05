@@ -85,7 +85,7 @@ const WorkForm: React.FC = () => {
                     type="text"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
-                    className="mt-1 block w-full p-2 border border-gray-300"
+                    className="mt-1 block w-full text-black p-2 border border-gray-300"
                     required
                 />
             </div>
@@ -95,7 +95,7 @@ const WorkForm: React.FC = () => {
                     type="text"
                     value={genre}
                     onChange={(e) => setGenre(e.target.value)}
-                    className="mt-1 block w-full p-2 border border-gray-300"
+                    className="mt-1 block w-full text-black p-2 border border-gray-300"
                     required
                 />
             </div>
@@ -104,7 +104,7 @@ const WorkForm: React.FC = () => {
                 <select
                     value={authorId}
                     onChange={(e) => setAuthorId(e.target.value)}
-                    className="mt-1 block w-full p-2 border border-gray-300"
+                    className="mt-1 block w-full text-black p-2 border border-gray-300"
                     required
                 >
                     <option value="">Select an Author</option>
@@ -120,7 +120,7 @@ const WorkForm: React.FC = () => {
                 <textarea
                     value={links.join('\n')}  // Converti l'array in una stringa separata da nuove righe
                     onChange={handleLinksChange}  // Ogni nuova riga è un nuovo link
-                    className="mt-1 block w-full p-2 border border-gray-300"
+                    className="mt-1 block w-full text-black p-2 border border-gray-300"
                     placeholder="Enter one link per line"
                 ></textarea>
             </div>

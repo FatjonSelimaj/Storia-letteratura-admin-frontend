@@ -140,7 +140,7 @@ const ArticleForm: React.FC = () => {
                     type="text"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
-                    className="mt-1 block w-full p-2 border border-gray-300"
+                    className="mt-1 block w-full text-black p-2 border border-gray-300"
                     required // Il campo titolo è obbligatorio
                 />
             </div>
@@ -149,7 +149,7 @@ const ArticleForm: React.FC = () => {
                 <textarea
                     value={content}
                     onChange={(e) => setContent(e.target.value)}
-                    className="mt-1 block w-full p-2 border border-gray-300"
+                    className="mt-1 block w-full text-black p-2 border border-gray-300"
                     required // Il campo contenuto è obbligatorio
                 ></textarea>
             </div>
@@ -159,7 +159,7 @@ const ArticleForm: React.FC = () => {
                     type="text"
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
-                    className="mt-1 block w-full p-2 border border-gray-300"
+                    className="mt-1 block w-full text-black p-2 border border-gray-300"
                     required // Il campo categoria è obbligatorio
                 />
             </div>

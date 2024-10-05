@@ -56,7 +56,7 @@ const AuthorForm: React.FC = () => {
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="mt-1 block w-full p-2 border border-gray-300"
+                    className="mt-1 block w-full text-black p-2 border border-gray-300"
                     required
                 />
             </div>
@@ -65,7 +65,7 @@ const AuthorForm: React.FC = () => {
                 <textarea
                     value={biography}
                     onChange={(e) => setBiography(e.target.value)}
-                    className="mt-1 block w-full p-2 border border-gray-300"
+                    className="mt-1 block w-full text-black p-2 border border-gray-300"
                 ></textarea>
             </div>
             <button

@@ -51,7 +51,7 @@ const HistorySectionForm: React.FC = () => {
                     type="text"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
-                    className="mt-1 block w-full p-2 border border-gray-300"
+                    className="mt-1 block w-full text-black p-2 border border-gray-300"
                     required
                 />
             </div>
@@ -60,7 +60,7 @@ const HistorySectionForm: React.FC = () => {
                 <textarea
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
-                    className="mt-1 block w-full p-2 border border-gray-300"
+                    className="mt-1 block w-full text-black p-2 border border-gray-300"
                     required
                 />
             </div>
@@ -70,7 +70,7 @@ const HistorySectionForm: React.FC = () => {
                     type="text"
                     value={historicalPeriod}
                     onChange={(e) => setHistoricalPeriod(e.target.value)}
-                    className="mt-1 block w-full p-2 border border-gray-300"
+                    className="mt-1 block w-full text-black p-2 border border-gray-300"
                     required
                 />
             </div>
