@@ -11,6 +11,8 @@ import WorkForm from './form/WorkFrom';
 import WorkList from './components/WorkList';
 import Home from './components/HomePage';  // Importa il componente Home
 import AuthorDetails from './components/AuthorDetails';
+import LiteratureForm from './form/LiteratureForm';
+import LiteratureList from './components/LiteratureList';
 
 const App: React.FC = () => {
     return (
@@ -28,6 +30,8 @@ const App: React.FC = () => {
                     <Route path="/history-sections" element={<HistorySectionList />} />
                     <Route path="/create-history-section" element={<HistorySectionForm />} />
                     <Route path="/history-sections/:id" element={<HistorySectionForm />} />
+                    <Route path="/literatures" element={<LiteratureList />} />
+                    <Route path="/create-literature" element={<LiteratureForm />} />
                     <Route path="/works" element={<WorkList />} />
                     <Route path="/works/:id" element={<WorkForm />} />
                     <Route path="/works/new" element={<WorkForm />} />

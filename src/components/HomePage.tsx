@@ -128,7 +128,7 @@ const HomePage: React.FC = () => {
                         <div className="bg-white shadow-md rounded-lg p-4">
                             <h2 className="text-xl font-bold">{works[0].title}</h2>
                             <p>Genre: {works[0].genre}</p>
-                            <p>Author: {works[0].author.name}</p>
+                            <p>Author: {works[0].authorId}</p>
                             <p>Created At: {new Date(works[0].createdAt).toLocaleDateString()}</p>
                             <Link to={`/works`} className="text-blue-500 hover:underline">
                                 View Works List

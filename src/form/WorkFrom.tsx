@@ -80,7 +80,7 @@ const WorkForm: React.FC = () => {
         <form onSubmit={handleSubmit} className="space-y-4">
             {error && <p className="text-red-500">{error}</p>}
             <div>
-                <label className="block text-sm font-medium text-gray-700">Title:</label>
+                <label className="block text-sm font-medium text-green-500">Title:</label>
                 <input
                     type="text"
                     value={title}
@@ -90,7 +90,7 @@ const WorkForm: React.FC = () => {
                 />
             </div>
             <div>
-                <label className="block text-sm font-medium text-gray-700">Genre:</label>
+                <label className="block text-sm font-medium text-green-500">Genre:</label>
                 <input
                     type="text"
                     value={genre}
@@ -100,7 +100,7 @@ const WorkForm: React.FC = () => {
                 />
             </div>
             <div>
-                <label className="block text-sm font-medium text-gray-700">Author:</label>
+                <label className="block text-sm font-medium text-green-500">Author:</label>
                 <select
                     value={authorId}
                     onChange={(e) => setAuthorId(e.target.value)}
@@ -116,7 +116,7 @@ const WorkForm: React.FC = () => {
                 </select>
             </div>
             <div>
-                <label className="block text-sm font-medium text-gray-700">Links (one per line):</label>
+                <label className="block text-sm font-medium text-green-500">Links (one per line):</label>
                 <textarea
                     value={links.join('\n')}  // Converti l'array in una stringa separata da nuove righe
                     onChange={handleLinksChange}  // Ogni nuova riga è un nuovo link

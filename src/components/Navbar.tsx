@@ -58,6 +58,8 @@ const Navbar: React.FC = () => {
                     <Link to="/create-author" className="text-white py-2 px-4 block md:inline-block">Create Author</Link>
                     <Link to="/history-sections" className="text-white py-2 px-4 block md:inline-block">History Sections</Link>
                     <Link to="/create-history-section" className="text-white py-2 px-4 block md:inline-block">Create History Section</Link>
+                    <Link to="/literatures" className="text-white py-2 px-4 block md:inline-block">Literature</Link>
+                    <Link to="/create-literature" className="text-white py-2 px-4 block md:inline-block">Create Literature</Link>
                     <Link to="/works" className="text-white py-2 px-4 block md:inline-block">Works</Link>
                     <Link to="/works/new" className="text-white py-2 px-4 block md:inline-block">Create Work</Link>
                 </div>

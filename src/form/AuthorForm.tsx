@@ -51,7 +51,7 @@ const AuthorForm: React.FC = () => {
         <form onSubmit={handleSubmit} className="space-y-4">
             {error && <p className="text-red-500">{error}</p>} {/* Messaggio di errore */}
             <div>
-                <label className="block text-sm font-medium text-gray-700">Name:</label>
+                <label className="block text-sm font-medium text-green-500">Name:</label>
                 <input
                     type="text"
                     value={name}
@@ -61,7 +61,7 @@ const AuthorForm: React.FC = () => {
                 />
             </div>
             <div>
-                <label className="block text-sm font-medium text-gray-700">Biography:</label>
+                <label className="block text-sm font-medium text-green-500">Biography:</label>
                 <textarea
                     value={biography}
                     onChange={(e) => setBiography(e.target.value)}

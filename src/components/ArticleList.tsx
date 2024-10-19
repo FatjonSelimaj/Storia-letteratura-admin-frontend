@@ -66,9 +66,9 @@ const ArticleList: React.FC = () => {
     }
 
     return (
-        <div className="container mx-auto p-4">
+        <div className="container mx-auto p-6">
             {/* Barra di ricerca */}
-            <div className="mb-6">
+            <div className="container mx-auto p-12">
                 <input
                     type="text"
                     value={searchQuery}

@@ -90,7 +90,7 @@ const WorkList: React.FC = () => {
                     <p>No works found</p>
                 ) : (
                     filteredWorks.map((work) => (
-                        <div key={work.id} className="bg-white shadow-md rounded-lg p-4">
+                        <div key={work.id} className="bg-white text-black shadow-md rounded-lg p-4">
                             <h2 className="text-xl font-bold">{work.title}</h2>
                             <p>{work.genre}</p>
                             <p>{getAuthorName(work.authorId)}</p> {/* Mostra il nome dell'autore */}

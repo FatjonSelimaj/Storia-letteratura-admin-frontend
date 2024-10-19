@@ -46,7 +46,7 @@ const HistorySectionForm: React.FC = () => {
         <form onSubmit={handleSubmit} className="space-y-4">
             {error && <p className="text-red-500">{error}</p>}
             <div>
-                <label className="block text-sm font-medium text-gray-700">Title:</label>
+                <label className="block text-sm font-medium text-green-500">Title:</label>
                 <input
                     type="text"
                     value={title}
@@ -56,7 +56,7 @@ const HistorySectionForm: React.FC = () => {
                 />
             </div>
             <div>
-                <label className="block text-sm font-medium text-gray-700">Description:</label>
+                <label className="block text-sm font-medium text-green-500">Description:</label>
                 <textarea
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
@@ -65,7 +65,7 @@ const HistorySectionForm: React.FC = () => {
                 />
             </div>
             <div>
-                <label className="block text-sm font-medium text-gray-700">Historical Period:</label>
+                <label className="block text-sm font-medium text-green-500">Historical Period:</label>
                 <input
                     type="text"
                     value={historicalPeriod}

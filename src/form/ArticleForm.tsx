@@ -135,7 +135,7 @@ const ArticleForm: React.FC = () => {
         <form onSubmit={handleSubmit} className="space-y-4">
             {error && <p className="text-red-500">{error}</p>}
             <div>
-                <label className="block text-sm font-medium text-gray-700">Title:</label>
+                <label className="block text-sm font-medium text-green-500">Title:</label>
                 <input
                     type="text"
                     value={title}
@@ -145,7 +145,7 @@ const ArticleForm: React.FC = () => {
                 />
             </div>
             <div>
-                <label className="block text-sm font-medium text-gray-700">Content:</label>
+                <label className="block text-sm font-medium text-green-500">Content:</label>
                 <textarea
                     value={content}
                     onChange={(e) => setContent(e.target.value)}
@@ -154,7 +154,7 @@ const ArticleForm: React.FC = () => {
                 ></textarea>
             </div>
             <div>
-                <label className="block text-sm font-medium text-gray-700">Category:</label>
+                <label className="block text-sm font-medium text-green-500">Category:</label>
                 <input
                     type="text"
                     value={category}
