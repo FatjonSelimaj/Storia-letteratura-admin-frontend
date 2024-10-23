@@ -4,12 +4,12 @@ import { getArticles, deleteArticle } from '../services/articleService';
 import { Article } from '../interfaces/articleInterface';
 
 const ArticleList: React.FC = () => {
-    const [articles, setArticles] = useState<Article[]>([]);
-    const [filteredArticles, setFilteredArticles] = useState<Article[]>([]); // Stato per gli articoli filtrati
-    const [loading, setLoading] = useState<boolean>(true);
-    const [error, setError] = useState<string | null>(null);
-    const [expandedArticleId, setExpandedArticleId] = useState<string | null>(null);
-    const [searchQuery, setSearchQuery] = useState<string>(''); // Stato per la barra di ricerca
+    const [articles, setArticles] = useState<Article[]>([]);  // Inizializza come array vuoto
+    const [filteredArticles, setFilteredArticles] = useState<Article[]>([]);  // Articoli filtrati
+    const [loading, setLoading] = useState<boolean>(true);  // Stato di caricamento
+    const [error, setError] = useState<string | null>(null);  // Stato per errori
+    const [expandedArticleId, setExpandedArticleId] = useState<string | null>(null);  // Articolo espanso
+    const [searchQuery, setSearchQuery] = useState<string>('');  // Stato per la barra di ricerca
 
     const navigate = useNavigate();
 
@@ -17,8 +17,12 @@ const ArticleList: React.FC = () => {
         const fetchArticles = async () => {
             try {
                 const data = await getArticles();
-                setArticles(data);
-                setFilteredArticles(data); // Imposta inizialmente gli articoli filtrati uguali agli articoli originali
+                if (Array.isArray(data)) {  // Assicurati che `data` sia un array
+                    setArticles(data);
+                    setFilteredArticles(data);  // Imposta gli articoli filtrati uguali a quelli originali
+                } else {
+                    setError('Data format is incorrect. Expected an array.');
+                }
             } catch (err) {
                 setError('Failed to fetch articles');
             } finally {
@@ -38,21 +42,21 @@ const ArticleList: React.FC = () => {
     const handleDelete = async (id: string) => {
         try {
             await deleteArticle(id);
-            setArticles(articles.filter(article => article.id !== id));
-            setFilteredArticles(filteredArticles.filter(article => article.id !== id)); // Aggiorna anche gli articoli filtrati
+            setArticles(articles.filter(article => article.id !== id));  // Aggiorna lista articoli
+            setFilteredArticles(filteredArticles.filter(article => article.id !== id));  // Aggiorna articoli filtrati
         } catch (err) {
             setError('Failed to delete article');
         }
     };
 
-    // Funzione per filtrare gli articoli in base al titolo
+    // Funzione per filtrare gli articoli in base al titolo o contenuto
     const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
         const query = e.target.value.toLowerCase();
         setSearchQuery(query);
         setFilteredArticles(
             articles.filter(article =>
-                article.title.toLowerCase().includes(query) || // Filtra per titolo
-                article.content.toLowerCase().includes(query) // Puoi aggiungere altre condizioni qui
+                article.title.toLowerCase().includes(query) ||  // Filtra per titolo
+                article.content.toLowerCase().includes(query)   // Filtra per contenuto
             )
         );
     };
@@ -91,7 +95,7 @@ const ArticleList: React.FC = () => {
                             <h2 className="text-xl font-semibold mb-2">{article.title}</h2>
                             <p className="text-blue-600 mb-4">
                                 {expandedArticleId === article.id
-                                    ? article.content // Mostra l'intero contenuto se espanso
+                                    ? article.content  // Mostra l'intero contenuto se espanso
                                     : article.content.slice(0, 100) + '...'} {/* Mostra una preview se non espanso */}
                             </p>
                             <button
